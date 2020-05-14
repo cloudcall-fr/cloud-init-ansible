@@ -1,6 +1,6 @@
 #!/bin/sh
-## post installation script template for ovh  
-## see: https://www.ovh.com/world/dedicated-servers/running_a_post_installation_script.xml
+## when the provider does not support cloud-init provisioning
+## e.g. ovh dedicated servers, vps
 
 set -e
 
