@@ -1,9 +1,0 @@
-#pseudo code to re-run cloud init
-
-mkdir /var/lib/cloud/seed/nocloud-net
-cp existing meta-data /var/lib/cloud/seed/nocloud-net/meta-data
-cp existing vendor-data /var/lib/cloud/seed/nocloud-net/vendor-data
-nano /var/lib/cloud/seed/nocloud-net/user-dat
-cloud-init clean
-cloud-init init 
-cloud-init modules --mode final

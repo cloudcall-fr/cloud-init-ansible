@@ -2,7 +2,7 @@
 
 FILE=../.env
 if [ -f "$FILE" ]; then
-    source ../.env
+    . ../.env
 else 
     echo "Please copy ../.env.template to ../.env, then update .env"
     exit 0
