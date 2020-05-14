@@ -1,6 +1,6 @@
 #!/bin/sh
-## cloud-init support for ovh via the post installation script url 
-## source: https://www.ovh.com/world/dedicated-servers/running_a_post_installation_script.xml
+## post installation script template for ovh  
+## see: https://www.ovh.com/world/dedicated-servers/running_a_post_installation_script.xml
 
 set -e
 
