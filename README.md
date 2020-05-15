@@ -7,7 +7,7 @@ Check the required variables in .env.template
 Test locally with multipass
 ---------------------------
 1. install multipass: https://multipass.run/docs
-2. copy your custom .env.template to .env 
+2. copy your custom env.template to .env 
 3. cd to multipass and sh launch-ansible-vm.sh
 
 Requirements
