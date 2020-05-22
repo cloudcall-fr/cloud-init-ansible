@@ -1,7 +1,13 @@
 #cloud-config
 # run ansible roles from cloud-init
 
+# TODO:
+# - put ansible apt install in runcmd section 
+#   to unify for 18.04 and 20.04 
+
 # requisites
+ssh_import_id: ${public_key_user}
+
 apt_upgrade: true
 # uncomment to support 18.04
 #apt_sources:
@@ -37,9 +43,10 @@ write_files:
           loop_control:
             loop_var: role_item
     path: /var/tmp/ansible/main.yml
+# Ansible variables block begin
   - content: "${ansible_vars}"
     path: /var/tmp/ansible/vars.yml
-
+# Ansible variables block end
 runcmd:
   - set -e
   - cd /root
@@ -48,7 +55,7 @@ runcmd:
   - ansible-playbook /var/tmp/ansible/build-requirements.yml -e "@/var/tmp/ansible/vars.yml" --connection=local -i localhost,
 
   - export MY_GIT_TOKEN=${git_token}
-  # hack via sed needed to prevent unwanted envsubst substitution
+  # hack via sed to prevent unwanted envsubst substitution
   - echo 'echo XMY_GIT_TOKEN' | sed "s/X/$/" > /var/tmp/ansible/.git-askpass
   - chmod +x /var/tmp/ansible/.git-askpass
   - export GIT_ASKPASS=/var/tmp/ansible/.git-askpass
