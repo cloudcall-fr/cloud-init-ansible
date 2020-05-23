@@ -26,6 +26,7 @@ cp /var/lib/cloud/instance/vendor-data.txt /var/lib/cloud/seed/nocloud-net/vendo
 echo "datasource_list: [ NoCloud, None ]" > /var/run/cloud-init/cloud.cfg
 curl -sfL $CLOUD_INIT_TMPL | envsubst > /var/lib/cloud/seed/nocloud-net/user-data
 
+cloud-init status
 cloud-init clean
 cloud-init init --local
 cloud-init init
