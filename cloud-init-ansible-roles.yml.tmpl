@@ -32,7 +32,7 @@ write_files:
       - hosts: localhost
         any_errors_fatal: true
         tasks:
-        - name: run ansible_roles: ${ansible_roles}
+        - name: "run ansible_roles: ${ansible_roles}"
           include_role:
             name: "{{ role_item }}"
           loop: "{{ '${ansible_roles}'.split(',') }}"
