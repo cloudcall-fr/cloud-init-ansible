@@ -6,12 +6,12 @@ set -e
 
 CLOUD_INIT_TMPL="https://raw.githubusercontent.com/cloudcall-fr/cloud-init-ansible/v1.2.0/cloud-init-ansible-roles.yml.tmpl"
 
-set +a
+set -a
 FILE=.env
 if [ -f "$FILE" ]; then
     . .env
 fi
-set -a
+set +a
 
 mkdir -p /var/lib/cloud/seed/nocloud-net
 
