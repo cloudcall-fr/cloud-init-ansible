@@ -1,6 +1,8 @@
 #!/bin/sh
+
 ## when the provider does not support cloud-init provisioning
 ## e.g. ovh dedicated servers, vps
+## usually autoinstall roles are preferable (see cloudcall.autoinstall.zfs)
 
 set -e
 
