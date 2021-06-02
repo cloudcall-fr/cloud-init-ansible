@@ -6,7 +6,7 @@
 
 set -e
 
-CLOUD_INIT_TMPL="https://raw.githubusercontent.com/cloudcall-fr/cloud-init-ansible/v1.2.0/cloud-init-ansible-roles.yml.tmpl"
+CLOUD_INIT_TMPL="https://raw.githubusercontent.com/cloudcall-fr/cloud-init-ansible/v1.2.2/cloud-init-ansible-roles.yml.tmpl"
 
 set -a
 FILE=./.env
